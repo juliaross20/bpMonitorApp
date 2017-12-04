@@ -10,30 +10,36 @@ class ChartMaker extends Component{
                 this.state = {
                     chartData: [],
                 }
+		} 
+		componentWillMount() {
                 var Particle = require('particle-api-js');
                 var particle = new Particle();
                 var token;
                 particle.login({username: 'morgan.ringel@duke.edu', password: 'Mjr0910!!'}).then(
-                   function(data){
+                   (data) => {
                         token = data.body.access_token;
                         console.log(token)
                         particle.getEventStream({ deviceId: '410024000451353432383931',  auth: token}).then(
-                        function(stream) {
-                            stream.on('event', function(data) {
+                        (stream) => {
+                            stream.on('event', (data) => {
                                     console.log("Event",data);
+									console.log("Test");
+									console.log(this.setState)
+									this.setState({chartData:this.state.chartData.concat([{name:'b', value:18}])})
                                     // parse a point
                                    this.updateChart(); 
                                 });
                    })
                    },
-                   function (err) {
+                   (err) => {
                     console.log('Could not log in.', err);
                     }
                 );
-	} 
+
+		}
+
        	updateChart = () => {
 		console.log('hi');
-		this.setState({chartData:this.state.chartData.concat([{name:'b', value:18}])})
 	}
 	
 
