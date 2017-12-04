@@ -24,11 +24,11 @@ class OtherInputs extends Component{
 			<div>
 				<MuiThemeProvider>
 				<Slider min={0} max={14} step={.5} value={this.state.SleepSlider} onChange={this.handleSleepSlider} />
-        			<p>
+        			<center><p>
          				<span>{'I got '}</span>
          				<span>{this.state.SleepSlider}</span>
          			 	<span>{' hours of sleep last night'}</span>
-       				</p>
+       				</p></center>
         			<Slider
           				min={0}
           				max={10}
@@ -36,19 +36,19 @@ class OtherInputs extends Component{
           				value={this.state.StressSlider}
           				onChange={this.handleStressSlider}
         			/>
-       				<p>
+       				<center><p>
           				<span>{'I would rate my stress level '}</span>
          				<span>{this.state.StressSlider}</span>
          				<span>{' out of 10'}</span>
-        			</p>
-				<TextField
+        			</p></center>
+				<center><TextField
     					intText="Other notes for my doctor: "
 					floatingLabelText="Other notes for my doctor"
       					floatingLabelFixed={true}
       					multiLine={true}
       					rows={2}
       					rowsMax={4}
-   				 /><br />
+   				 /><br /></center>
 
 				</MuiThemeProvider>
 			</div>

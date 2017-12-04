@@ -38,16 +38,16 @@ class OpeningMenu extends Component {
       >
         <Tab label="Overview" value="a">
           <div>
-            <h2 style={styles.headline}>Summary</h2>
-            <p>
+            <center><h2 style={styles.headline}>Summary</h2></center>
+            <center><p>
 	    	This is a summary of your past blood pressure data
-	    	<ChartMaker/>
-            </p>
+	    	<center><ChartMaker/></center>
+            </p></center>
           </div>
         </Tab>
         <Tab label="Take New Recording" value="b">
           <div>
-            <h2 style={styles.headline}>Input Other Metrics for your Doctor</h2>
+            <center><h2 styie={styles.headline}>Input Other Metrics for your Doctor</h2></center>
             <OtherInputs />
           </div>
         </Tab>
